@@ -164,6 +164,14 @@
 - -r: tell nodemon to require a module before starting the application
 - dotenv/config:  automatically load environment variables from a .env file into process.env
 
+### Setuping Utils
+
+#### Standarized error and response
+1. create a utils directory inside src directory
+2. create ApiError.js file for standardizing all errors
+
+#### Standarized 
+
 
 
 

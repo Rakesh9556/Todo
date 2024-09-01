@@ -70,21 +70,40 @@
 
 
 ### ES MODULE
+- in js we can import module in two ways (i) common js and (ii) module js
 - standarized way to import and export code in different js file 
 - it uses "import" and "export" syntax to share code between files
 - to use ES modules, we need to set <b>"type": "module"</b> in <b>package.json<b>
+
+
+### Synchronous Vs Asynchronous
+- synchronous operations are the tasks that are executed sequentially, one after the other.
+  Each opertion must be complete before the next one starts (ineffcient for tasks that take time, like database operation, file I/O, network req)
+
+- asynchronous operatios are the tasks that are executed concurrently, instead of waiting for a task to complete, the program can continue executing other tasks. When one task completed it signals the program to process the result (via callback, promise or async/await). Used when tasks involvve waiting, like fetching data from a server, reading large file or performing I/O operations.
 
 ### Setup HotReloading (nodemon package)
 - if we made some changes to code we need to restart the the server everytime to see the updated changes
 - it is annoying to restart the server everytime
 - for this reason we will use <b>nodemon</b>: this will restart the server everytime when some changes are made
 
-
 ### Setup .gitignore
 - it is used to keep the files which we don't want to push into the git
 - contains node_modules, .env, etc
 
+### Json Formatter
+- used this to format json data
 
+### Axios
+
+### CORS
+- url whitelisting
+
+### Proxy (vite)
+
+### Bundlers/tool chain
+- it takes multiple files(html, css, js, images, etc) and combines them into a single file or few files, for the purpose of deploying web application
+- it makes the 
 ### Deploy
 1. Digital Ocean
 2. Heroku
@@ -92,6 +111,62 @@
 4. Cnode
 5. Render
 6. Cyclic
+
+### Data Modelling
+- moon modeler
+- eraser.io
+
+
+### OAuth
+- stands for open authorization
+- used to implement third party login
+
+
+### App.js Vs index.js
+1. App.js
+   - used for setting up main express application
+   - handle configuration middlewares (like cors, body parsing, static file serving, etc)
+   - also handle routes
+   -  Sets up middleware, routes, and exports the Express app instance.
+
+2. index.js
+   - entry point of the application
+   - start the server
+   - initializes configs like env variables, connecting to database, handelling server errors
+   - Imports the app from app.js, sets up database connections, configures environment variables, and starts the server.
+
+
+## Project Creation
+
+### Data Modelling
+1. create a model directory inside src directory
+1. import mongoose package
+2.  create models using monngoose schema:
+   - user model
+   - task model
+   - category model
+   - tag model
+3. export the model
+
+
+
+### Database Connection
+1. Create a db directory inside src directory
+2. create a DbConnect.js file inside it
+3. also define new file called constnt.js inside src directory for defining all constant fields used throught the project (like DB_NAME, DB_URI, PORT, JWT_SECRET, etc)
+
+### Setup app.js
+
+### Setup server(index.js)
+
+### Use nodemon dependency - dev dependency
+"dev": "nodemon -r dotenv/config  --experimental-json-modules  src/index.js"
+- -r: tell nodemon to require a module before starting the application
+- dotenv/config:  automatically load environment variables from a .env file into process.env
+
+
+
+
 
 
 
